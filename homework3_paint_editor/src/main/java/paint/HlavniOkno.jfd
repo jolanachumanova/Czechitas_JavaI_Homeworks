@@ -1,0 +1,111 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_202" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[fill][fill][fill][fill][fill][fill][grow,fill]"
+			"$rowConstraints": "[][grow,fill]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Paint"
+			"$locationPolicy": 1
+			"$sizePolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowOpened", "priOtevreniOkna", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labAktualniBarva"
+				"text": "Aktuální barva:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva1"
+				"background": new java.awt.Color( 255, 0, 0, 255 )
+				"opaque": true
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 5, false )
+				"horizontalAlignment": 0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labBarvaXMouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 0,wmin 30,hmin 30"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva2"
+				"background": new java.awt.Color( 255, 255, 0, 255 )
+				"opaque": true
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 5, false )
+				"horizontalAlignment": 0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labBarvaXMouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 0,wmin 30,hmin 30"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva3"
+				"opaque": true
+				"background": new java.awt.Color( 0, 0, 255, 255 )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 5, false )
+				"horizontalAlignment": 0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labBarvaXMouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 0,wmin 30,hmin 30"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva4"
+				"background": new java.awt.Color( 0, 204, 0, 255 )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 5, false )
+				"opaque": true
+				"horizontalAlignment": 0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labBarvaXMouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 0,wmin 30,hmin 30"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva5"
+				"background": new java.awt.Color( 255, 102, 102, 255 )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 5, false )
+				"horizontalAlignment": 0
+				"opaque": true
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "labBarvaXMouseClicked", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 5 0,wmin 30,hmin 30"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labObrazek"
+				"background": new java.awt.Color( 153, 153, 255, 255 )
+				"opaque": true
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "priKliknutiNaLabObrazek", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1 7 1"
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu1"
+					"text": "Soubor"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuOtevrit"
+						"text": "Otevřít"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "priStiskuMenuOtevrit", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuUlozit"
+						"text": "Uložit"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "priStiskuMenuUlozit", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuUlozitJako"
+						"text": "Uložit Jako"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "priStiskuMenuUlozitJako", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 575, 475 )
+		} )
+	}
+}
